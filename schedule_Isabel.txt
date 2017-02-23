@@ -1,0 +1,4 @@
+Schedule and deliverable:
+	-Buy and Sell button screen -- Wed 02/25 by 12 pm (estimate: 2 hours)
+	-Location screen with working buttons -- Wed 02/27 by 12 pm (estimate: 4 hours)
+	-Screen where you can input specific location -- Wed 03/01 by 12 pm (estimate: 3 hours)
