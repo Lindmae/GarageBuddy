@@ -1,7 +1,7 @@
 Alejandro Serrano
 
 Schedule Deliverables
-pickStartAndEndDate()      --- 1 hour to complete due by 2-25-2017
-  _chooseDate()            --- 1 hour to complete due by 2-26-2017
-pickStartAndEndTime        --- 1 hour to complete due by 2-27-2017
-  o _chooseTime()          --- 1 hour to complete due by 3-1-2017
+pickStartAndEndDate()     --- 1 hour to complete due by 2-25-2017
+  _chooseDate()           --- 1 hour to complete due by 2-26-2017
+pickStartAndEndTime       --- 1 hour to complete due by 2-27-2017
+  o _chooseTime()         --- 1 hour to complete due by 3-1-2017
