@@ -15,7 +15,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity" />
         <activity
             android:name=".CategoryTab"
             android:label="@string/title_activity_category_tab"
@@ -23,12 +22,11 @@
         <activity
             android:name=".savedPage"
             android:label="@string/title_activity_saved_page"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".EndDateSelector" />
         <activity android:name=".StartDateSelector" />
-        <activity android:name=".StartTimeSelector"></activity>
-        <activity android:name=".EndTimeSelector"></activity>
+        <activity android:name=".StartTimeSelector"/>
+        <activity android:name=".EndTimeSelector"/>
     </application>
 
 </manifest>
