@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Main2Activity" />
+        <activity android:name=".EndDateSelector" />
+        <activity android:name=".StartDateSelector" />
         <activity android:name=".StartTimeSelector"></activity>
         <activity android:name=".EndTimeSelector"></activity>
     </application>
