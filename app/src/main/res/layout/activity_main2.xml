@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="isabel.garagesale.Main2Activity">
+
+    <CheckBox
+        android:id="@+id/toysCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="69dp"
+        android:text="@string/Toys"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:id="@+id/babyCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/BabyClothes"
+        android:layout_below="@+id/toysCheckBox"
+        android:layout_alignLeft="@+id/toysCheckBox"
+        android:layout_alignStart="@+id/toysCheckBox" />
+
+    <CheckBox
+        android:id="@+id/kidsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/KidsClothes"
+        android:layout_below="@+id/babyCheckBox"
+        android:layout_alignLeft="@+id/babyCheckBox"
+        android:layout_alignStart="@+id/babyCheckBox" />
+
+    <CheckBox
+        android:id="@+id/youngACheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/YoungAdult"
+        android:layout_below="@+id/kidsCheckBox"
+        android:layout_alignLeft="@+id/kidsCheckBox"
+        android:layout_alignStart="@+id/kidsCheckBox" />
+
+    <CheckBox
+        android:id="@+id/adultCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/youngACheckBox"
+        android:layout_alignStart="@+id/youngACheckBox"
+        android:layout_below="@+id/youngACheckBox"
+        android:text="@string/AdultClothes"/>
+
+    <CheckBox
+        android:id="@+id/electronicsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/adultCheckBox"
+        android:layout_alignStart="@+id/adultCheckBox"
+        android:layout_below="@+id/adultCheckBox"
+        android:text="@string/electronics"/>
+
+    <CheckBox
+        android:id="@+id/sportgoodsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/electronicsCheckBox"
+        android:layout_alignStart="@+id/electronicsCheckBox"
+        android:layout_below="@+id/electronicsCheckBox"
+        android:text="@string/sportgoods"/>
+
+    <CheckBox
+        android:id="@+id/toolsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sportgoodsCheckBox"
+        android:layout_alignStart="@+id/sportgoodsCheckBox"
+        android:layout_below="@+id/sportgoodsCheckBox"
+        android:text="@string/tools" />
+
+    <CheckBox
+        android:id="@+id/toolsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sportgoodsCheckBox"
+        android:layout_alignStart="@+id/sportgoodsCheckBox"
+        android:layout_below="@+id/sportgoodsCheckBox"
+        android:text="@string/tools" />
+
+    <CheckBox
+        android:id="@+id/appliancesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/toolsCheckBox"
+        android:layout_alignStart="@+id/toolsCheckBox"
+        android:layout_below="@+id/toolsCheckBox"
+        android:text="@string/appliances" />
+
+    <CheckBox
+        android:id="@+id/entCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/appliancesCheckBox"
+        android:layout_alignStart="@+id/appliancesCheckBox"
+        android:layout_below="@+id/appliancesCheckBox"
+        android:text="@string/entertainment" />
+
+    <CheckBox
+        android:id="@+id/videogamesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/entCheckBox"
+        android:layout_alignStart="@+id/entCheckBox"
+        android:layout_below="@+id/entCheckBox"
+        android:text="@string/videogames"  />
+
+    <CheckBox
+        android:id="@+id/miscCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/videogamesCheckBox"
+        android:layout_alignStart="@+id/videogamesCheckBox"
+        android:layout_below="@+id/videogamesCheckBox"
+        android:text="@string/Misc"  />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="63dp"
+        android:text="@string/Save"/>
+
+</RelativeLayout>
