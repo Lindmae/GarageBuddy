@@ -1,19 +1,19 @@
 package isabel.garagesale;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class EndTimeSelector extends AppCompatActivity {
+public class StartDateSelector extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_end_time_selector);
-        Button button = (Button) findViewById(R.id.button4);
-        button.setOnClickListener(new EndTimeSelector.MyClass() {
+        setContentView(R.layout.activity_start_date_selector);
+        Button button = (Button) findViewById(R.id.button5);
+        button.setOnClickListener(new StartDateSelector.MyClass() {
 
             @Override
             public void onClick(View v) {
@@ -26,7 +26,7 @@ public class EndTimeSelector extends AppCompatActivity {
 
     private void goToSecondActivity() {
 
-        Intent intent = new Intent(this, StartDateSelector.class);
+        Intent intent = new Intent(this, EndDateSelector.class);
 
         startActivity(intent);
 

@@ -6,14 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class EndTimeSelector extends AppCompatActivity {
+public class EndDateSelector extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_end_time_selector);
-        Button button = (Button) findViewById(R.id.button4);
-        button.setOnClickListener(new EndTimeSelector.MyClass() {
+        setContentView(R.layout.activity_end_date_selector);
+        Button button = (Button) findViewById(R.id.button6);
+        button.setOnClickListener(new EndDateSelector.MyClass() {
 
             @Override
             public void onClick(View v) {
@@ -26,7 +26,8 @@ public class EndTimeSelector extends AppCompatActivity {
 
     private void goToSecondActivity() {
 
-        Intent intent = new Intent(this, StartDateSelector.class);
+        //switch to categories
+        Intent intent = new Intent(this, EndDateSelector.class);
 
         startActivity(intent);
 

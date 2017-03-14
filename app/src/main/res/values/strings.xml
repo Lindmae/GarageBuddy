@@ -2,8 +2,9 @@
     <string name="app_name">GarageSale</string>
     <string name="welcome_screen_text">Press to Start Garage Sale App</string>
     <string name="button_to_start_app">Enter</string>
-    <string name="main2">BOOOOOOOO</string>
-    <string name="title_activity_time_selector">Time Selector</string>
+
+    <string name="button_start_date">Enter Start Date</string>
+    <string name="button_end_date">Enter End Date</string>
     <string name="button_start_time">Enter Start Time</string>
     <string name="button_end_time">Enter End Time</string>
 
