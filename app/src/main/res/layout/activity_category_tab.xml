@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context="isabel.garagesale.CategoryTab">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appBarLayout">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="Add your Categories" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <CheckBox
+        android:id="@+id/toysCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appBarLayout"
+        android:onClick="onCheckboxClicked"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:text="@string/Toys" />
+
+    <CheckBox
+        android:id="@+id/babyCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toysCheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/BabyClothes" />
+
+    <CheckBox
+        android:id="@+id/kidsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/babyCheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/KidsClothes" />
+
+    <CheckBox
+        android:id="@+id/youngACheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/kidsCheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/YoungAdult" />
+
+    <CheckBox
+        android:id="@+id/adultCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/youngACheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/AdultClothes" />
+
+    <CheckBox
+        android:id="@+id/electronicsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/adultCheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/electronics" />
+
+    <CheckBox
+        android:id="@+id/sportgoodsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/electronicsCheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/sportgoods" />
+
+    <CheckBox
+        android:id="@+id/toolsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sportgoodsCheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/tools" />
+
+    <CheckBox
+        android:id="@+id/appliancesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolsCheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/appliances" />
+
+    <CheckBox
+        android:id="@+id/entCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/appliancesCheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/entertainment" />
+
+    <CheckBox
+        android:id="@+id/videogamesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/entCheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/videogames" />
+
+    <CheckBox
+        android:id="@+id/miscCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/videogamesCheckBox"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/Misc" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="27dp"
+        android:layout_toEndOf="@+id/sportgoodsCheckBox"
+        android:layout_toRightOf="@+id/sportgoodsCheckBox"
+        android:onClick="onSaveClick"
+        android:text="@string/Save" />
+
+</RelativeLayout>

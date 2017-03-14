@@ -10,4 +10,21 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_activity_category_tab">CategoryTab</string>
+    <string name="title_activity_saved_page">savedPage</string>
+
+    <string name="Toys">Toys</string>
+    <string name="BabyClothes">Baby Clothes</string>
+    <string name="KidsClothes">Kids Clothes</string>
+    <string name="YoungAdult">Young Adult Clothes</string>
+    <string name="AdultClothes">Adult Clothes</string>
+    <string name="electronics">Electronics</string>
+    <string name="sportgoods">Sporting Goods</string>
+    <string name="tools">Tools</string>
+    <string name="appliances">Appliances</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="videogames">Video Games</string>
+    <string name="Misc">Misc.</string>
+    <string name="Save">Save</string>
+    <string name="Saved">Saved!</string>
 </resources>
