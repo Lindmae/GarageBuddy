@@ -4,6 +4,9 @@
     <string name="button_to_start_app">Enter</string>
     <string name="main2">BOOOOOOOO</string>
     <string name="title_activity_time_selector">Time Selector</string>
+    <string name="button_start_time">Enter Start Time</string>
+    <string name="button_end_time">Enter End Time</string>
+
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>

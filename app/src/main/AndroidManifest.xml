@@ -15,8 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Main2Activity" />
-        <activity android:name=".TimeSelector"></activity>
+        <activity android:name=".StartTimeSelector"></activity>
+        <activity android:name=".EndTimeSelector"></activity>
     </application>
 
 </manifest>

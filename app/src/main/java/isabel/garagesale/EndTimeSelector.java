@@ -1,19 +1,19 @@
 package isabel.garagesale;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.content.Intent;
 
-public class MainActivity extends AppCompatActivity {
+public class EndTimeSelector extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button button = (Button) findViewById(R.id.button2);
-        button.setOnClickListener(new MyClass() {
+        setContentView(R.layout.activity_end_time_selector);
+        Button button = (Button) findViewById(R.id.button4);
+        button.setOnClickListener(new EndTimeSelector.MyClass() {
 
             @Override
             public void onClick(View v) {
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToSecondActivity() {
 
-        Intent intent = new Intent(this, StartTimeSelector.class);
+        Intent intent = new Intent(this, Main2Activity.class);
 
         startActivity(intent);
 
@@ -39,5 +39,4 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
 }
