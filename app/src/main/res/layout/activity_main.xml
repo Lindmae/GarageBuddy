@@ -10,13 +10,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_centerHorizontal="true"/>
+
     <Button
         android:id="@+id/SellButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@id/strut"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@id/strut"
+        android:background="#fed766"
         android:text="Sell" />
 
     <Button
@@ -24,7 +26,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/strut"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#17bebb"
         android:text="Find" />
 </RelativeLayout>
