@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Button button = (Button) findViewById(R.id.SellButton);
         button.setOnClickListener(new MyClass() {
 
@@ -22,11 +23,30 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        Button fbutton = (Button) findViewById(R.id.FindButton);
+        fbutton.setOnClickListener(new MyClass() {
+
+            @Override
+            public void onClick(View v) {
+                goToThirdActivity();
+
+            }
+
+        });
     }
 
     private void goToSecondActivity() {
 
-        Intent intent = new Intent(this, StartTimeSelector.class);
+        Intent intent = new Intent(this, SellDirectionsScreen.class);
+
+        startActivity(intent);
+
+    }
+
+    private void goToThirdActivity() {
+
+        Intent intent = new Intent(this, SellLocation.class);
 
         startActivity(intent);
 
