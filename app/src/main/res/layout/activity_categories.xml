@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="isabel.garagesale.Main2Activity">
+    tools:context="isabel.garagesale.Categories">
 
     <CheckBox
         android:id="@+id/toysCheckBox"
@@ -82,15 +82,6 @@
         android:text="@string/tools" />
 
     <CheckBox
-        android:id="@+id/toolsCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/sportgoodsCheckBox"
-        android:layout_alignStart="@+id/sportgoodsCheckBox"
-        android:layout_below="@+id/sportgoodsCheckBox"
-        android:text="@string/tools" />
-
-    <CheckBox
         android:id="@+id/appliancesCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -130,9 +121,9 @@
         android:id="@+id/saveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:text="@string/Save"
+        android:layout_below="@+id/miscCheckBox"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="63dp"
-        android:text="@string/Save"/>
+        android:layout_marginTop="33dp" />
 
 </RelativeLayout>

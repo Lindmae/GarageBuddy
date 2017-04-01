@@ -27,7 +27,7 @@ public class EndDateSelector extends AppCompatActivity {
     private void goToSecondActivity() {
 
         //switch to categories
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, Categories.class);
 
         startActivity(intent);
 

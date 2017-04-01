@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Main2Activity extends AppCompatActivity {
+public class Categories extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_categories);
         Button button = (Button) findViewById(R.id.saveBtn);
-        button.setOnClickListener(new Main2Activity.MyClass() {
+        button.setOnClickListener(new Categories.MyClass() {
 
             @Override
             public void onClick(View v) {
@@ -26,7 +26,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private void goToSecondActivity() {
 
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, Categories.class);
 
         startActivity(intent);
 
