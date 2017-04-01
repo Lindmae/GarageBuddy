@@ -1,7 +1,10 @@
 Alejandro Serrano
 
-Schedule Deliverables
-pickStartAndEndDate()     --- 1 hour to complete due by 2-25-2017
-  _chooseDate()           --- 1 hour to complete due by 2-26-2017
-pickStartAndEndTime       --- 1 hour to complete due by 2-27-2017
-  o _chooseTime()         --- 1 hour to complete due by 3-1-2017
+Schedule Deliverables      ---             Schedule                   --- Actual Completion Time and date
+Pick Start & End Time Page --- 2 hours to complete due by 3-7 -2017   --- 4 hours completed on 3-13-2017 
+Pick Start & End Date Page --- 2 hours to complete due by 3-7 -2017   --- 4 hours completed on 3-13-2017 
+Create Google maps Page    --- 4 hours to complete due by 4-1 -2017   ---
+pickStartAndEndDate()      ---  1 hour to complete due by 2-25-2017 
+  _chooseDate()            ---  1 hour to complete due by 2-26-2017
+pickStartAndEndTime        ---  1 hour to complete due by 2-27-2017
+  o _chooseTime()          ---  1 hour to complete due by 3-1-2017
