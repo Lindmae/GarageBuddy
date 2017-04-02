@@ -7,6 +7,7 @@
     <string name="button_end_date">Enter End Date</string>
     <string name="button_start_time">Enter Start Time</string>
     <string name="button_end_time">Enter End Time</string>
+    <string name="button_menu">Menu</string>
 
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -30,4 +31,5 @@
     <string name="Saved">Saved!</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_sell_location">Map</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
