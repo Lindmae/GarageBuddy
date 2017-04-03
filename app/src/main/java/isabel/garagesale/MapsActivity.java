@@ -114,7 +114,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         Intent intent = new Intent(this, SearchFilter.class);
 
-        startActivity(intent);
+        startActivityForResult(intent,1);
 
     }
 
@@ -123,6 +123,24 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         @Override
         public void onClick(View v) {
 
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // check that it is the SecondActivity with an OK result
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+
+                // info from search
+                String[] DataToPassBack = data.getStringArrayExtra("keyName");
+
+                // set text view with string
+                //TextView textView = (TextView) findViewById(R.id.textView);
+                //textView.setText(returnString);
+            }
         }
     }
 
