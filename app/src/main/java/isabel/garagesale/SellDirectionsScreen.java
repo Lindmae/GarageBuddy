@@ -21,11 +21,29 @@ public class SellDirectionsScreen extends AppCompatActivity {
     }
 
     private void goToSecondActivity() {
+        Intent prevIntent = getIntent();
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData");
+        //code to modify the SellData goes here
 
         Intent intent = new Intent(this, StartTimeSelector.class);
+        intent.putExtra("globalData1",sellData);
+        startActivityForResult(intent,2);
+        setResult(RESULT_OK, intent);
+        finish();
 
-        startActivity(intent);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // check that it is the SecondActivity with an OK result
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+
+                SellData sellData = (SellData)data.getSerializableExtra("globalData2");
+            }
+        }
     }
 
     public class MyClass implements View.OnClickListener {
@@ -37,6 +55,8 @@ public class SellDirectionsScreen extends AppCompatActivity {
     }
     
 }
+
+
 
 
     

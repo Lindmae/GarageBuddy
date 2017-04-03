@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class StartTimeSelector extends AppCompatActivity {
+public class Description extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_time_selector);
-        Button button = (Button) findViewById(R.id.button3);
-        button.setOnClickListener(new StartTimeSelector.MyClass() {
+        setContentView(R.layout.activity_description);
+        Button button = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(new Description.MyClass() {
 
             @Override
             public void onClick(View v) {
@@ -26,12 +26,12 @@ public class StartTimeSelector extends AppCompatActivity {
 
     private void goToSecondActivity() {
         Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData1");
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData6");
         //code to modify the SellData goes here
 
-        Intent intent = new Intent(this, EndTimeSelector.class);
+        Intent intent = new Intent(this, FinalResult.class);
 
-        intent.putExtra("globalData2",sellData);
+        intent.putExtra("globalData7",sellData);
         startActivityForResult(intent,2);
         setResult(RESULT_OK, intent);
         finish();
@@ -46,7 +46,7 @@ public class StartTimeSelector extends AppCompatActivity {
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
 
-                SellData sellData = (SellData)data.getSerializableExtra("globalData3");
+                SellData sellData = (SellData)data.getSerializableExtra("globalData8");
             }
         }
     }
