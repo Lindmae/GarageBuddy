@@ -6,15 +6,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SearchFilter extends AppCompatActivity {
+public class FinalResult extends AppCompatActivity {
 
-    String[] DataToPassBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_filter);
-        Button button = (Button) findViewById(R.id.buttonSearch);
-        button.setOnClickListener(new SearchFilter.MyClass() {
+        setContentView(R.layout.activity_final_result);
+
+        Intent prevIntent = getIntent();
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData7");
+        //code to modify/access the SellData goes here
+
+
+        Button button = (Button) findViewById(R.id.button7);
+        button.setOnClickListener(new FinalResult.MyClass() {
 
             @Override
             public void onClick(View v) {
@@ -27,10 +32,11 @@ public class SearchFilter extends AppCompatActivity {
     }
 
     private void goToPreviousActivity() {
+        Intent prevIntent = getIntent();
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData7");
 
-        Intent intent = new Intent();
-        intent.putExtra("keyName", DataToPassBack);
-        setResult(RESULT_OK, intent);
+        prevIntent.putExtra("GlobalData8", sellData);
+        setResult(RESULT_OK, prevIntent);
         finish();
 
     }

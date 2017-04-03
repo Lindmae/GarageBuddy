@@ -60,7 +60,9 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".SearchFilter"></activity>
+        <activity android:name=".SearchFilter" />
+        <activity android:name=".Description" />
+        <activity android:name=".FinalResult"></activity>
     </application>
 
 </manifest>

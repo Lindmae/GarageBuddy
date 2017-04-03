@@ -25,12 +25,30 @@ public class EndDateSelector extends AppCompatActivity {
     }
 
     private void goToSecondActivity() {
+        Intent prevIntent = getIntent();
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData4");
+        //code to modify the SellData goes here
 
-        //switch to categories
         Intent intent = new Intent(this, Categories.class);
 
-        startActivity(intent);
+        intent.putExtra("globalData5",sellData);
+        startActivityForResult(intent,2);
+        setResult(RESULT_OK, intent);
+        finish();
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // check that it is the SecondActivity with an OK result
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+
+                SellData sellData = (SellData)data.getSerializableExtra("globalData6");
+            }
+        }
     }
 
     public class MyClass implements View.OnClickListener {
