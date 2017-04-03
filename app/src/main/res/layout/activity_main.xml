@@ -17,23 +17,23 @@
         android:id="@+id/SellButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_alignParentTop="true"
         android:layout_alignBottom="@id/strut"
-        android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:layout_alignRight="@id/strut"
+        android:layout_weight="1"
         android:background="#fed766"
-        android:text="Sell" />
+        android:text="Start a garage sale " />
 
     <Button
         android:id="@+id/FindButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_alignLeft="@id/strut"
-        android:layout_alignTop="@id/strut"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/strut"
         android:background="#17bebb"
-        android:text="Find" />
+        android:text="Find a garage sale " />
 </RelativeLayout>
