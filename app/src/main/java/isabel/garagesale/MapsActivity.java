@@ -47,7 +47,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             requestFineLocationPermission();
         }
 
-        Button button = (Button) findViewById(R.id.menuButton);
+        Button button = (Button) findViewById(R.id.filterButton);
         button.setOnClickListener(new MapsActivity.MyClass() {
 
             @Override
