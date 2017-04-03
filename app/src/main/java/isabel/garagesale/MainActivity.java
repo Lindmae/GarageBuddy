@@ -37,11 +37,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goToSecondActivity() {
-
+        SellData sellData = new SellData();
         Intent intent = new Intent(this, SellDirectionsScreen.class);
+        intent.putExtra("globalData",sellData);
+        startActivityForResult(intent,2);
 
-        startActivity(intent);
+        //code to send data to sql database
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // check that it is the SecondActivity with an OK result
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+
+                SellData sellData = (SellData)data.getSerializableExtra("globalData1");
+            }
+        }
     }
 
     private void goToThirdActivity() {

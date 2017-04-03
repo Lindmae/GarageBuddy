@@ -25,11 +25,30 @@ public class Categories extends AppCompatActivity {
     }
 
     private void goToSecondActivity() {
+        Intent prevIntent = getIntent();
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData5");
+        //code to modify the SellData goes here
 
-        Intent intent = new Intent(this, Categories.class);
+        Intent intent = new Intent(this, Description.class);
 
-        startActivity(intent);
+        intent.putExtra("globalData6",sellData);
+        startActivityForResult(intent,2);
+        setResult(RESULT_OK, intent);
+        finish();
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // check that it is the SecondActivity with an OK result
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+
+                SellData sellData = (SellData)data.getSerializableExtra("globalData7");
+            }
+        }
     }
 
     public class MyClass implements View.OnClickListener {
