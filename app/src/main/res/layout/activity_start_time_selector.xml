@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F2EF"
     tools:context="isabel.garagesale.StartTimeSelector"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
@@ -12,21 +13,22 @@
         android:id="@+id/timePicker"
         android:layout_width="0dp"
         android:layout_height="95dp"
-        android:timePickerMode="spinner"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="64dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button3"
-        android:layout_marginEnd="64dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="135dp"
-        tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="137dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="64dp"
         android:layout_marginLeft="64dp"
-        android:layout_marginRight="64dp" />
+        android:layout_marginRight="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="135dp"
+        android:background="#F0F2EF"
+        android:timePickerMode="spinner"
+        app:layout_constraintBottom_toBottomOf="@+id/button3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <Button
         android:id="@+id/button3"
@@ -35,8 +37,8 @@
         android:background="#fed766"
         android:text="@string/button_start_time"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timePicker"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
 
 </android.support.constraint.ConstraintLayout>
