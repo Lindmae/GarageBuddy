@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToThirdActivity() {
 
-        Intent intent = new Intent(this, SellLocation.class);
+        Intent intent = new Intent(this, MapsActivity.class);
 
         startActivity(intent);
 
