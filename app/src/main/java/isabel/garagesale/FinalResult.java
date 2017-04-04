@@ -6,18 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class FinalResult extends AppCompatActivity {
+    ArrayList<String> Params;
+    ArrayList<String> Categories;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_result);
-
-        Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData7");
-        //code to modify/access the SellData goes here
-
-
         Button button = (Button) findViewById(R.id.button7);
         button.setOnClickListener(new FinalResult.MyClass() {
 
@@ -34,6 +33,17 @@ public class FinalResult extends AppCompatActivity {
     private void goToPreviousActivity() {
         Intent prevIntent = getIntent();
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData7");
+
+
+        String method = "TestHTTP";
+        Categories = sellData.getCategories();
+        myTaskParams params = new myTaskParams(method,Params,Categories);
+        params.setParams(sellData.getStartTime());
+        params.setParams(sellData.getEndTime());
+        params.setParams(sellData.getStartDay());
+        params.setParams(sellData.getEndDay());
+        BackgroundTask backgroundTask = new BackgroundTask(this);
+        backgroundTask.execute(params);
 
         prevIntent.putExtra("globalData8", sellData);
         setResult(RESULT_OK, prevIntent);

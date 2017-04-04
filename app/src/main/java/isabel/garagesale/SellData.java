@@ -1,6 +1,7 @@
 package isabel.garagesale;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by Alex on 4/3/17.
@@ -13,7 +14,7 @@ public class SellData implements Serializable
     private String StartDay;
     private String EndDay;
 
-    private String[] Categories;
+    private ArrayList<String> Categories;
     private String Description;
 
     public SellData()
@@ -23,7 +24,7 @@ public class SellData implements Serializable
         StartDay = null;
         EndDay = null;
 
-        Categories = null;
+        Categories = new ArrayList<String>();
         Description = null;
     }
 
@@ -47,7 +48,7 @@ public class SellData implements Serializable
         return EndDay;
     }
 
-    public String[] getCategories()
+    public ArrayList<String> getCategories()
     {
         return Categories;
     }
@@ -75,9 +76,9 @@ public class SellData implements Serializable
     {
         EndDay = ST;
     }
-    public void setCategories(String[] ST )
+    public void setCategories(String ST )
     {
-        Categories = ST;
+        Categories.add(ST);
     }
 
     public void setDescription(String ST )

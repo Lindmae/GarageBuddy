@@ -5,13 +5,19 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TimePicker;
 
 public class EndTimeSelector extends AppCompatActivity {
+
+    String hour;
+    String minute;
+    TimePicker timePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_time_selector);
+        timePicker = (TimePicker) findViewById(R.id.timePicker2);
         Button button = (Button) findViewById(R.id.button4);
         button.setOnClickListener(new EndTimeSelector.MyClass() {
 
@@ -28,6 +34,11 @@ public class EndTimeSelector extends AppCompatActivity {
         Intent prevIntent = getIntent();
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData2");
         //code to modify the SellData goes here
+
+        hour = String.valueOf(timePicker.getHour());
+        minute = String.valueOf(timePicker.getMinute());
+
+        sellData.setEndTime(hour+":"+minute);
 
         Intent intent = new Intent(this, StartDateSelector.class);
 
