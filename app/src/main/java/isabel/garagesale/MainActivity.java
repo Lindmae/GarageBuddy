@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
+    SellData sellData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +38,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goToSecondActivity() {
-        SellData sellData = new SellData();
+        sellData = new SellData();
         Intent intent = new Intent(this, SellDirectionsScreen.class);
         intent.putExtra("globalData",sellData);
         startActivityForResult(intent,2);
 
         //code to send data to sql database
+
+
+
 
     }
 
