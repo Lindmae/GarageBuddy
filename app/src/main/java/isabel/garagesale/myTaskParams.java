@@ -17,6 +17,10 @@ public class myTaskParams {
         this.Categories = Categories;
     }
 
+    myTaskParams(String method){
+        this.method = method;
+    }
+
     String getMethod(){
         return method;
     }

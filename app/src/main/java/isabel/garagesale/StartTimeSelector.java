@@ -45,11 +45,7 @@ public class StartTimeSelector extends AppCompatActivity {
         Intent prevIntent = getIntent();
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData1");
         //code to modify the SellData goes here
-        TimePicker timePick = (TimePicker) findViewById(R.id.timePicker);
-        int hour = timePick.getHour();
-        int minute = timePick.getMinute();
         //this line below crashes app
-        sellData2.setStartTime(hour, minute);
 
         hour = String.valueOf(timePicker.getHour());
         minute = String.valueOf(timePicker.getMinute());
@@ -58,7 +54,7 @@ public class StartTimeSelector extends AppCompatActivity {
 
         Intent intent = new Intent(this, EndTimeSelector.class);
 
-        intent.putExtra("globalData2",sellData2);
+        intent.putExtra("globalData2",sellData);
         startActivityForResult(intent,3);
         setResult(RESULT_OK, intent);
         finish();
