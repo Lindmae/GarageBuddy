@@ -27,7 +27,7 @@ public class StartTimeSelector extends AppCompatActivity {
 
     private void goToSecondActivity() {
         Intent prevIntent = getIntent();
-        SellData sellData2 = (SellData)prevIntent.getSerializableExtra("GlobalData1");
+        SellData sellData2 = (SellData)prevIntent.getSerializableExtra("globalData1");
         //code to modify the SellData goes here
         TimePicker timePick = (TimePicker) findViewById(R.id.timePicker);
         int hour = timePick.getHour();

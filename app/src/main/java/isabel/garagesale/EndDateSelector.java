@@ -26,7 +26,7 @@ public class EndDateSelector extends AppCompatActivity {
 
     private void goToSecondActivity() {
         Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData4");
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData4");
         //code to modify the SellData goes here
 
         Intent intent = new Intent(this, Categories.class);

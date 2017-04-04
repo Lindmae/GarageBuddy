@@ -26,7 +26,7 @@ public class Description extends AppCompatActivity {
 
     private void goToSecondActivity() {
         Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData6");
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData6");
         //code to modify the SellData goes here
 
         Intent intent = new Intent(this, FinalResult.class);

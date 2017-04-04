@@ -14,7 +14,7 @@ public class FinalResult extends AppCompatActivity {
         setContentView(R.layout.activity_final_result);
 
         Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData7");
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData7");
         //code to modify/access the SellData goes here
 
 
@@ -33,9 +33,9 @@ public class FinalResult extends AppCompatActivity {
 
     private void goToPreviousActivity() {
         Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData7");
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData7");
 
-        prevIntent.putExtra("GlobalData8", sellData);
+        prevIntent.putExtra("globalData8", sellData);
         setResult(RESULT_OK, prevIntent);
         finish();
 
