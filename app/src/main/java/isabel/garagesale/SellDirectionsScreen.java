@@ -38,7 +38,7 @@ public class SellDirectionsScreen extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         // check that it is the SecondActivity with an OK result
-        if (requestCode == 1) {
+        if (requestCode == 2) {
             if (resultCode == RESULT_OK) {
 
                 SellData sellData = (SellData)data.getSerializableExtra("globalData2");

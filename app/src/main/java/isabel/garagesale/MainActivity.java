@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         SellData sellData = new SellData();
         Intent intent = new Intent(this, SellDirectionsScreen.class);
         intent.putExtra("globalData",sellData);
-        startActivityForResult(intent,2);
+        startActivityForResult(intent,1);
 
         //code to send data to sql database
 

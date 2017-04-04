@@ -32,7 +32,7 @@ public class StartTimeSelector extends AppCompatActivity {
         Intent intent = new Intent(this, EndTimeSelector.class);
 
         intent.putExtra("globalData2",sellData);
-        startActivityForResult(intent,2);
+        startActivityForResult(intent,3);
         setResult(RESULT_OK, intent);
         finish();
 
@@ -43,7 +43,7 @@ public class StartTimeSelector extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         // check that it is the SecondActivity with an OK result
-        if (requestCode == 1) {
+        if (requestCode == 3) {
             if (resultCode == RESULT_OK) {
 
                 SellData sellData = (SellData)data.getSerializableExtra("globalData3");
