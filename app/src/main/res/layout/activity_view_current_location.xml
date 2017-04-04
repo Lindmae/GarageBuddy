@@ -14,12 +14,13 @@
         tools:context="isabel.garagesale.ViewCurrentLocation" />
 
     <Button
-    android:id="@+id/finishButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginBottom="22dp"
-    android:alpha="0.6"
-    android:text="Return" />
+        android:id="@+id/finishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:alpha="0.6"
+        android:background="#fed766"
+        android:text="Return" />
 </RelativeLayout>

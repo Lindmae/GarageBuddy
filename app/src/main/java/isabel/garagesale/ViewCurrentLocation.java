@@ -1,6 +1,7 @@
 package isabel.garagesale;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -46,7 +47,7 @@ public class ViewCurrentLocation extends FragmentActivity implements OnMapReadyC
 
             @Override
             public void onClick(View v) {
-                finish();
+                goToPreviousActivity();
 
             }
 
@@ -111,6 +112,16 @@ public class ViewCurrentLocation extends FragmentActivity implements OnMapReadyC
                 Toast.makeText(this,"Oops you just denied the permission",Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    private void goToPreviousActivity() {
+        Intent prevIntent = getIntent();
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData8v1");
+
+        prevIntent.putExtra("globalData9v1", sellData);
+        setResult(RESULT_OK, prevIntent);
+        finish();
+
     }
 
     public class MyClass implements View.OnClickListener {

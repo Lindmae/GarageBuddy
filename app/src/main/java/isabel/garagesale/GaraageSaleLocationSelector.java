@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 
 public class GaraageSaleLocationSelector extends AppCompatActivity {
     CheckBox myLocation;
     CheckBox selectLocation;
     CheckBox typeLocation;
-    //String Lat;
-    //String Long;
+    SellData temp = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +75,15 @@ public class GaraageSaleLocationSelector extends AppCompatActivity {
     }
 
     private void goToSecondActivity() {
-        Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData7");
-        //code to modify the SellData goes here
+        SellData sellData;
+
+
+        if (temp == null)
+        {
+            Toast.makeText(this,"Need to select a location",Toast.LENGTH_LONG).show();
+            return;
+        }
+        sellData = temp;
 
         Intent intent = new Intent(this, FinalResult.class);
 
@@ -132,19 +138,19 @@ public class GaraageSaleLocationSelector extends AppCompatActivity {
         if (requestCode == 91) {
             if (resultCode == RESULT_OK) {
 
-                SellData sellData = (SellData)data.getSerializableExtra("globalData9v1");
+                temp = (SellData)data.getSerializableExtra("globalData9v1");
             }
         }
         if (requestCode == 92) {
             if (resultCode == RESULT_OK) {
 
-                SellData sellData = (SellData)data.getSerializableExtra("globalData9v2");
+                temp = (SellData)data.getSerializableExtra("globalData9v2");
             }
         }
         if (requestCode == 93) {
             if (resultCode == RESULT_OK) {
 
-                SellData sellData = (SellData)data.getSerializableExtra("globalData9v3");
+                temp = (SellData)data.getSerializableExtra("globalData9v2");
             }
         }
     }
