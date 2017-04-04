@@ -3,6 +3,7 @@ package isabel.garagesale;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -117,7 +118,10 @@ public class ViewCurrentLocation extends FragmentActivity implements OnMapReadyC
     private void goToPreviousActivity() {
         Intent prevIntent = getIntent();
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData8v1");
-
+        Location myLocation = new Location("GarageBuddy");
+        double lat = myLocation.getLatitude();
+        double longi = myLocation.getLongitude();
+        sellData.setTheLocation(lat + ", " + longi);
         prevIntent.putExtra("globalData9v1", sellData);
         setResult(RESULT_OK, prevIntent);
         finish();
