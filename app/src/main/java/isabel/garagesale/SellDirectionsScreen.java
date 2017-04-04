@@ -27,7 +27,7 @@ public class SellDirectionsScreen extends AppCompatActivity {
         //code to modify the SellData goes here
 
         Intent intent = new Intent(this, StartTimeSelector.class);
-        intent.putExtra("globalData1",sellData1);
+        intent.putExtra("globalData1",sellData);
         startActivityForResult(intent,2);
         setResult(RESULT_OK, intent);
         finish();
