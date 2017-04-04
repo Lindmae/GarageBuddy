@@ -34,6 +34,7 @@ public class FinalResult extends AppCompatActivity {
         Intent prevIntent = getIntent();
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData7");
 
+
         String method = "TestHTTP";
         Categories = sellData.getCategories();
         myTaskParams params = new myTaskParams(method,Params,Categories);

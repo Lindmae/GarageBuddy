@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
 import java.util.*;
 import android.widget.TimePicker;
 
@@ -14,6 +15,7 @@ import java.sql.Time;
 
 import static isabel.garagesale.R.id.datePicker;
 import static isabel.garagesale.R.id.timePicker;
+
 
 public class StartTimeSelector extends AppCompatActivity {
 
@@ -43,6 +45,11 @@ public class StartTimeSelector extends AppCompatActivity {
         Intent prevIntent = getIntent();
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData1");
         //code to modify the SellData goes here
+        TimePicker timePick = (TimePicker) findViewById(R.id.timePicker);
+        int hour = timePick.getHour();
+        int minute = timePick.getMinute();
+        //this line below crashes app
+        sellData2.setStartTime(hour, minute);
 
         hour = String.valueOf(timePicker.getHour());
         minute = String.valueOf(timePicker.getMinute());
@@ -51,8 +58,8 @@ public class StartTimeSelector extends AppCompatActivity {
 
         Intent intent = new Intent(this, EndTimeSelector.class);
 
-        intent.putExtra("globalData2",sellData);
-        startActivityForResult(intent,2);
+        intent.putExtra("globalData2",sellData2);
+        startActivityForResult(intent,3);
         setResult(RESULT_OK, intent);
         finish();
 
@@ -63,10 +70,10 @@ public class StartTimeSelector extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         // check that it is the SecondActivity with an OK result
-        if (requestCode == 1) {
+        if (requestCode == 3) {
             if (resultCode == RESULT_OK) {
 
-                SellData sellData = (SellData)data.getSerializableExtra("globalData3");
+                SellData sellDataV2 = (SellData)data.getSerializableExtra("globalData3");
             }
         }
     }
