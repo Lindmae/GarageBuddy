@@ -32,7 +32,7 @@ public class FinalResult extends AppCompatActivity {
 
     private void goToPreviousActivity() {
         Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData7");
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData8");
 
 
         String method = "TestHTTP";
@@ -45,7 +45,7 @@ public class FinalResult extends AppCompatActivity {
         BackgroundTask backgroundTask = new BackgroundTask(this);
         backgroundTask.execute(params);
 
-        prevIntent.putExtra("globalData8", sellData);
+        prevIntent.putExtra("globalData9", sellData);
         setResult(RESULT_OK, prevIntent);
         finish();
 
