@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F2EF"
     tools:context="isabel.garagesale.GaraageSaleLocationSelector">
 
     <Button
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Accept"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="137dp" />
+        android:layout_marginBottom="137dp"
+        android:text="Accept" />
 
     <CheckBox
         android:id="@+id/MyLocation"
@@ -28,15 +29,15 @@
         android:id="@+id/SelectLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Location From Map"
+        android:layout_alignStart="@+id/MyLocation"
         android:layout_below="@+id/MyLocation"
-        android:layout_alignStart="@+id/MyLocation" />
+        android:text="Select Location From Map" />
 
     <CheckBox
         android:id="@+id/TypeLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Type Address"
+        android:layout_alignStart="@+id/SelectLocation"
         android:layout_below="@+id/SelectLocation"
-        android:layout_alignStart="@+id/SelectLocation" />
+        android:text="Type Address" />
 </RelativeLayout>
