@@ -58,9 +58,9 @@ public class SellData implements Serializable
     }
 
 
-    public void setStartTime(String ST )
+    public void setStartTime(int hh, int mm )
     {
-        StartTime = ST;
+        StartTime = String.valueOf(hh)+ ":"+String.valueOf(mm);
     }
 
     public void setStartDay(String ST )

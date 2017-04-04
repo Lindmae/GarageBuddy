@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToSecondActivity() {
         SellData sellData = new SellData();
+
         Intent intent = new Intent(this, SellDirectionsScreen.class);
         intent.putExtra("globalData",sellData);
         startActivityForResult(intent,1);

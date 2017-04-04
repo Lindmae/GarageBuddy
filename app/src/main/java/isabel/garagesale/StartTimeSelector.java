@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TimePicker;
 
 public class StartTimeSelector extends AppCompatActivity {
 
@@ -26,12 +27,17 @@ public class StartTimeSelector extends AppCompatActivity {
 
     private void goToSecondActivity() {
         Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData1");
+        SellData sellData2 = (SellData)prevIntent.getSerializableExtra("GlobalData1");
         //code to modify the SellData goes here
+        TimePicker timePick = (TimePicker) findViewById(R.id.timePicker);
+        int hour = timePick.getHour();
+        int minute = timePick.getMinute();
+        //this line below crashes app
+        sellData2.setStartTime(hour, minute);
 
         Intent intent = new Intent(this, EndTimeSelector.class);
 
-        intent.putExtra("globalData2",sellData);
+        intent.putExtra("globalData2",sellData2);
         startActivityForResult(intent,3);
         setResult(RESULT_OK, intent);
         finish();
@@ -46,7 +52,7 @@ public class StartTimeSelector extends AppCompatActivity {
         if (requestCode == 3) {
             if (resultCode == RESULT_OK) {
 
-                SellData sellData = (SellData)data.getSerializableExtra("globalData3");
+                SellData sellDataV2 = (SellData)data.getSerializableExtra("globalData3");
             }
         }
     }

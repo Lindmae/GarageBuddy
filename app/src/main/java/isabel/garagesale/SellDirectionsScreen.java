@@ -22,11 +22,11 @@ public class SellDirectionsScreen extends AppCompatActivity {
 
     private void goToSecondActivity() {
         Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("GlobalData");
+        SellData sellData1 = (SellData)prevIntent.getSerializableExtra("GlobalData");
         //code to modify the SellData goes here
 
         Intent intent = new Intent(this, StartTimeSelector.class);
-        intent.putExtra("globalData1",sellData);
+        intent.putExtra("globalData1",sellData1);
         startActivityForResult(intent,2);
         setResult(RESULT_OK, intent);
         finish();
@@ -41,7 +41,7 @@ public class SellDirectionsScreen extends AppCompatActivity {
         if (requestCode == 2) {
             if (resultCode == RESULT_OK) {
 
-                SellData sellData = (SellData)data.getSerializableExtra("globalData2");
+                SellData sellDataV1 = (SellData)data.getSerializableExtra("globalData2");
             }
         }
     }
