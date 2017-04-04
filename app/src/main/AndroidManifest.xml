@@ -53,16 +53,14 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".SellLocation"
-            android:label="@string/title_activity_sell_location" />
         <activity android:name=".SellDirectionsScreen" />
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".SearchFilter" />
         <activity android:name=".Description" />
-        <activity android:name=".FinalResult"></activity>
+        <activity android:name=".FinalResult" />
+        <activity android:name=".GaraageSaleLocationSelector"></activity>
     </application>
 
 </manifest>
