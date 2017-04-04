@@ -32,4 +32,5 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_sell_location">Map</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_view_current_location">Current Location</string>
 </resources>

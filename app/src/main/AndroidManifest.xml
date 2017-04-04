@@ -60,7 +60,11 @@
         <activity android:name=".SearchFilter" />
         <activity android:name=".Description" />
         <activity android:name=".FinalResult" />
-        <activity android:name=".GaraageSaleLocationSelector"></activity>
+        <activity android:name=".GaraageSaleLocationSelector" />
+        <activity
+            android:name=".ViewCurrentLocation"
+            android:label="@string/title_activity_view_current_location" />
+        <activity android:name=".UnderConstruction"></activity>
     </application>
 
 </manifest>

@@ -10,34 +10,33 @@
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Accept"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Get Current Location" />
+        android:layout_marginBottom="137dp" />
 
-    <RadioButton
-        android:id="@+id/radioButton"
+    <CheckBox
+        android:id="@+id/MyLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="38dp"
-        android:text="Select Location From Map" />
+        android:text="Get Current Location" />
 
-    <RadioButton
-        android:id="@+id/radioButton2"
+    <CheckBox
+        android:id="@+id/SelectLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radioButton"
-        android:layout_alignStart="@+id/radioButton"
-        android:layout_below="@+id/radioButton"
-        android:text="Type Address" />
+        android:text="Select Location From Map"
+        android:layout_below="@+id/MyLocation"
+        android:layout_alignStart="@+id/MyLocation" />
 
-    <RadioButton
-        android:id="@+id/radioButton3"
+    <CheckBox
+        android:id="@+id/TypeLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radioButton2"
-        android:layout_alignStart="@+id/radioButton2"
-        android:layout_below="@+id/radioButton2"
-        android:text="RadioButton" />
+        android:text="Type Address"
+        android:layout_below="@+id/SelectLocation"
+        android:layout_alignStart="@+id/SelectLocation" />
 </RelativeLayout>
