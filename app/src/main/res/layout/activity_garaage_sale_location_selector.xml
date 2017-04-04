@@ -14,6 +14,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="137dp"
+        android:background="#fed766"
         android:text="Accept" />
 
     <CheckBox
