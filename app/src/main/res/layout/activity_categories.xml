@@ -13,162 +13,143 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:text="What will you be selling?"
+        app:layout_constraintBottom_toTopOf="@+id/toysCheckBox"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/babyCheckBox"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.647" />
 
     <CheckBox
         android:id="@+id/toysCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Toys"
-        app:layout_constraintRight_toLeftOf="@+id/textView7"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        android:layout_marginRight="16dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintVertical_bias="0.158" />
 
     <CheckBox
         android:id="@+id/babyCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/BabyClothes"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/toysCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/toysCheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/toysCheckBox"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <CheckBox
         android:id="@+id/kidsCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/KidsClothes"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/babyCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/babyCheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/babyCheckBox"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <CheckBox
         android:id="@+id/youngACheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/YoungAdult"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/kidsCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/kidsCheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/kidsCheckBox"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <CheckBox
         android:id="@+id/adultCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/AdultClothes"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/youngACheckBox"
         app:layout_constraintTop_toBottomOf="@+id/youngACheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/youngACheckBox"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <CheckBox
         android:id="@+id/electronicsCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/electronics"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/adultCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/adultCheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/adultCheckBox"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <CheckBox
         android:id="@+id/sportgoodsCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sportgoods"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/electronicsCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/electronicsCheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/electronicsCheckBox"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <CheckBox
         android:id="@+id/toolsCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tools"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/sportgoodsCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/sportgoodsCheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/sportgoodsCheckBox"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <CheckBox
         android:id="@+id/appliancesCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/appliances"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/toolsCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/toolsCheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/toolsCheckBox"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <CheckBox
         android:id="@+id/entCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/entertainment"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/appliancesCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/appliancesCheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/appliancesCheckBox"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <CheckBox
         android:id="@+id/videogamesCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/videogames"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/entCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/entCheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/entCheckBox"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <CheckBox
         android:id="@+id/miscCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Misc"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/videogamesCheckBox"
         app:layout_constraintTop_toBottomOf="@+id/videogamesCheckBox"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/videogamesCheckBox" />
+        tools:layout_constraintTop_creator="1" />
 
     <Button
         android:id="@+id/saveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Save"
         android:layout_marginBottom="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="#fed766"
+        android:text="@string/Save"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

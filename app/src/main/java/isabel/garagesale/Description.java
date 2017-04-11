@@ -29,7 +29,7 @@ public class Description extends AppCompatActivity {
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData6");
         //code to modify the SellData goes here
 
-        Intent intent = new Intent(this, FinalResult.class);
+        Intent intent = new Intent(this, GaraageSaleLocationSelector.class);
 
         intent.putExtra("globalData7",sellData);
         startActivityForResult(intent,8);

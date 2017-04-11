@@ -1,4 +1,3 @@
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,17 +11,16 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        tools:context="isabel.garagesale.ViewCurrentLocation" />
 
     <Button
-        android:id="@+id/filterButton"
+        android:id="@+id/finishButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="22dp"
         android:alpha="0.6"
-        android:background="#17bebb"
-        android:text="Filter" />
-
+        android:background="#fed766"
+        android:text="Return" />
 </RelativeLayout>

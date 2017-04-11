@@ -1,5 +1,7 @@
 package isabel.garagesale;
 
+import android.location.Location;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -16,6 +18,7 @@ public class SellData implements Serializable
 
     private ArrayList<String> Categories;
     private String Description;
+    private  String TheLocation;
 
     public SellData()
     {
@@ -26,6 +29,9 @@ public class SellData implements Serializable
 
         Categories = new ArrayList<String>();
         Description = null;
+        TheLocation = null;
+
+
     }
 
     public String getStartTime()
@@ -58,6 +64,11 @@ public class SellData implements Serializable
         return Description;
     }
 
+    public String getTheLocation()
+    {
+        return TheLocation;
+    }
+
 
     public void setStartTime(String ST )
     {
@@ -84,6 +95,11 @@ public class SellData implements Serializable
     public void setDescription(String ST )
     {
         Description = ST;
+    }
+
+    public  void setTheLocation(String ST)
+    {
+        TheLocation = ST;
     }
 
 
