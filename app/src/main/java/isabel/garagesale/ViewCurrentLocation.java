@@ -1,9 +1,11 @@
 package isabel.garagesale;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -19,6 +21,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import static android.location.LocationManager.GPS_PROVIDER;
 
 public class ViewCurrentLocation extends FragmentActivity implements OnMapReadyCallback {
 
@@ -94,6 +98,23 @@ public class ViewCurrentLocation extends FragmentActivity implements OnMapReadyC
         }
 
     }
+    private  void centerToMyLocation()
+    {
+        int LocationResult = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+
+        if (LocationResult == PackageManager.PERMISSION_GRANTED) {
+
+            if(mMap != null)
+            {
+                LocationManager myManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+                Location myLocation = new Location(myManager.getLastKnownLocation(GPS_PROVIDER));
+                double lat = myLocation.getLatitude();
+                double longi = myLocation.getLongitude();
+                LatLng current = new LatLng(lat, longi);
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current,16));
+            }
+        }
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -151,5 +172,6 @@ public class ViewCurrentLocation extends FragmentActivity implements OnMapReadyC
         // Add a marker in Sydney and move the camera
         //mMap.setMyLocationEnabled(true);
         enableMapSettings();
+        centerToMyLocation();
     }
 }
