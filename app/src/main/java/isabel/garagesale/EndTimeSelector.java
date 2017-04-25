@@ -2,16 +2,21 @@ package isabel.garagesale;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class EndTimeSelector extends AppCompatActivity {
 
     String hour;
     String minute;
     TimePicker timePicker;
+    CharSequence message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +28,47 @@ public class EndTimeSelector extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                goToSecondActivity();
+                if(checkValid())
+                    goToSecondActivity();
+                else {
+                    Snackbar mySnackbar = Snackbar.make(findViewById(R.id.myCoordinatorLayout), message, Snackbar.LENGTH_SHORT);
+                    mySnackbar.show();
+
+                }
 
             }
 
         });
+    }
+
+    private boolean checkValid(){
+        Calendar rightNow = Calendar.getInstance();
+        int currentHour = rightNow.get(Calendar.HOUR);
+        int currentMinute = rightNow.get(Calendar.MINUTE);
+
+        Intent prevIntent = getIntent();
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData1");
+        //code to modify the SellData goes here
+
+
+        hour = String.valueOf(timePicker.getHour());
+        minute = String.valueOf(timePicker.getMinute());
+
+        //String time = sellData.getStartTime();
+
+        //wrong hours
+        if (timePicker.getHour() < currentHour) {
+            message = "Invalid hour!";
+            return false;
+        }
+        //current hour but minutes are wrong
+        if ((timePicker.getMinute() < currentMinute + 5) && (timePicker.getHour() == currentHour)){
+            message = "Invalid minute!";
+            return false;
+        }
+
+        return true;
+
     }
 
     private void goToSecondActivity() {
