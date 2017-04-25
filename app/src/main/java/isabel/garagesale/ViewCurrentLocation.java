@@ -28,6 +28,7 @@ public class ViewCurrentLocation extends FragmentActivity implements OnMapReadyC
 
     private GoogleMap mMap;
     private  int LOCATION_PERMISSION_CODE = 6;
+    private  SellData sellData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +111,12 @@ public class ViewCurrentLocation extends FragmentActivity implements OnMapReadyC
                 Location myLocation = new Location(myManager.getLastKnownLocation(GPS_PROVIDER));
                 double lat = myLocation.getLatitude();
                 double longi = myLocation.getLongitude();
+                Intent prevIntent = getIntent();
+                SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData8v1");
+                sellData.setTheLocation(lat + ", " + longi);
+                //sellData.setTheLocation(lat + ", " + longi);
+                prevIntent.putExtra("globalData9v1", sellData);
+
                 LatLng current = new LatLng(lat, longi);
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current,16));
             }
@@ -137,14 +144,14 @@ public class ViewCurrentLocation extends FragmentActivity implements OnMapReadyC
     }
 
     private void goToPreviousActivity() {
-        Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData8v1");
-        Location myLocation = new Location("GarageBuddy");
-        double lat = myLocation.getLatitude();
-        double longi = myLocation.getLongitude();
-        sellData.setTheLocation(lat + ", " + longi);
-        prevIntent.putExtra("globalData9v1", sellData);
-        setResult(RESULT_OK, prevIntent);
+        //Intent prevIntent = getIntent();
+        //SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData8v1");
+        //Location myLocation = new Location("GarageBuddy");
+        //double lat = myLocation.getLatitude();
+        //double longi = myLocation.getLongitude();
+        //sellData.setTheLocation(lat + ", " + longi);
+        //prevIntent.putExtra("globalData9v1", sellData);
+        setResult(RESULT_OK, getIntent());
         finish();
 
     }
