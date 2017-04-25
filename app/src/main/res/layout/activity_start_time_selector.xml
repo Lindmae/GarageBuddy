@@ -29,7 +29,7 @@
         android:layout_marginRight="64dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="135dp"
-        android:background="#F0F2EF"
+        android:timePickerMode="spinner"
         android:headerBackground="#fed766"
         app:layout_constraintBottom_toBottomOf="@+id/button3"
         app:layout_constraintLeft_toLeftOf="parent"
