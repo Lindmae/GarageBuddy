@@ -14,6 +14,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -56,6 +57,17 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View v) {
                 goToSecondActivity();
+
+            }
+
+        });
+
+        ImageButton button2 = (ImageButton) findViewById(R.id.listviewButton);
+        button2.setOnClickListener(new MapsActivity.MyClass() {
+
+            @Override
+            public void onClick(View v) {
+                goToListActivity();
 
             }
 
@@ -116,6 +128,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private void goToSecondActivity() {
 
         Intent intent = new Intent(this, SearchFilter.class);
+
+        startActivityForResult(intent,1);
+
+    }
+
+    private void goToListActivity() {
+
+        Intent intent = new Intent(this, listView.class);
 
         startActivityForResult(intent,1);
 
