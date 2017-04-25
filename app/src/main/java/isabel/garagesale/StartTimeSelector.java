@@ -54,11 +54,13 @@ public class StartTimeSelector extends AppCompatActivity {
         int currentHour = dt.getHours();
         int currentMinute = dt.getMinutes();
 
-        if (timePicker.getHour() < currentHour) {
+        //wrong hours
+        if (timePicker.getCurrentHour() < currentHour) {
             message = "Invalid hour!";
             return false;
         }
-        if (timePicker.getMinute() < (currentMinute + 5)) {
+        //current hour but minutes are wrong
+        if ((timePicker.getCurrentMinute() < currentMinute) && (timePicker.getCurrentHour() == currentHour)){
             message = "Invalid minute!";
             return false;
         }

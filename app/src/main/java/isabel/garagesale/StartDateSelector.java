@@ -30,7 +30,6 @@ public class StartDateSelector extends AppCompatActivity {
         datePicker = (DatePicker) findViewById(R.id.datePicker);
         Button button = (Button) findViewById(R.id.button5);
 
-
         button.setOnClickListener(new StartDateSelector.MyClass() {
 
             @Override
