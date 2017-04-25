@@ -25,4 +25,13 @@
         android:background="#17bebb"
         android:text="Filter" />
 
+    <ImageButton
+        android:id="@+id/listviewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="13dp"
+        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
 </RelativeLayout>
