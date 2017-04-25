@@ -113,7 +113,8 @@ public class ViewCurrentLocation extends FragmentActivity implements OnMapReadyC
                 double longi = myLocation.getLongitude();
                 Intent prevIntent = getIntent();
                 SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData8v1");
-                sellData.setTheLocation(lat + ", " + longi);
+                sellData.setLatitude(Double.toString(lat));
+                sellData.setLongitude(Double.toString(longi));
                 //sellData.setTheLocation(lat + ", " + longi);
                 prevIntent.putExtra("globalData9v1", sellData);
 

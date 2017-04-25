@@ -198,10 +198,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     {
         for(SellData s : sellTracker)
         {
-            String p = s.getTheLocation();
-            String[] tokens = p.split(",");
-            double lat = Double.parseDouble(tokens[0]);
-            double longi = Double.parseDouble(tokens[1]);
+            //String p = s.getTheLocation();
+            //String[] tokens = p.split(",");
+            double lat = Double.parseDouble(s.getLatitude());
+            double longi = Double.parseDouble(s.getLongitude());
             LatLng place = new LatLng(lat,longi);
 
             markTracker.add( mMap.addMarker(new MarkerOptions().position(place).title("GB")) );
