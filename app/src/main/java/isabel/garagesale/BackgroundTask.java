@@ -31,6 +31,7 @@ public class BackgroundTask extends AsyncTask<myTaskParams,Void,String> {
             String startTime = params[0].Params.get(0);
             String endTime = params[0].Params.get(1);
             String startDate = params[0].Params.get(2);
+            String description = params[0].Params.get(3);
 
             String result = "";
             for (String s : params[0].Categories){
@@ -58,7 +59,7 @@ public class BackgroundTask extends AsyncTask<myTaskParams,Void,String> {
                 String data = URLEncoder.encode("startTime","UTF-8")+"="+URLEncoder.encode(startTime,"UTF-8")+"&"+
                         URLEncoder.encode("endTime","UTF-8")+"="+URLEncoder.encode(endTime,"UTF-8")+"&"+
                         URLEncoder.encode("startDate","UTF-8")+"="+URLEncoder.encode(startDate,"UTF-8")+"&"+
-
+                        URLEncoder.encode("description","UTF-8")+"="+URLEncoder.encode(description,"UTF-8")+"&"+
                         URLEncoder.encode("categories","UTF-8")+"="+URLEncoder.encode(categories,"UTF-8");
                 bufferedWriter.write(data);
                 bufferedWriter.flush();

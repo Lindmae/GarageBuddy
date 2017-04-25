@@ -5,13 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class Description extends AppCompatActivity {
+
+    EditText descBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
+
+        descBox = (EditText) findViewById(R.id.editText2);
         Button button = (Button) findViewById(R.id.button2);
         button.setOnClickListener(new Description.MyClass() {
 
@@ -28,6 +33,7 @@ public class Description extends AppCompatActivity {
         Intent prevIntent = getIntent();
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData6");
         //code to modify the SellData goes here
+        sellData.setDescription(descBox.getText().toString());
 
         Intent intent = new Intent(this, GaraageSaleLocationSelector.class);
 
