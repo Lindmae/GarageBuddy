@@ -49,6 +49,7 @@ public class FinalResult extends AppCompatActivity {
             textbox.append("       "+city + " , " + zipcode + ",\n");
             textbox.append("       " + state + ", "+ country+"\n");
             textbox.append("Selected Categories:\n");
+            //problem area
             ArrayList<String> t = sellData.getCategories();
             for(String s : t)
             {
