@@ -18,7 +18,9 @@ public class SellData implements Serializable
 
     private ArrayList<String> Categories;
     private String Description;
-    private  String TheLocation;
+    //private  String TheLocation;
+    private String Latitude;
+    private  String Longitude;
 
     public SellData()
     {
@@ -29,7 +31,8 @@ public class SellData implements Serializable
 
         Categories = new ArrayList<String>();
         Description = null;
-        TheLocation = null;
+        Latitude = null;
+        Longitude = null;
 
 
     }
@@ -64,9 +67,14 @@ public class SellData implements Serializable
         return Description;
     }
 
-    public String getTheLocation()
+    public String getLongitude()
     {
-        return TheLocation;
+        return Longitude;
+    }
+
+    public String getLatitude()
+    {
+        return Latitude;
     }
 
 
@@ -97,9 +105,14 @@ public class SellData implements Serializable
         Description = ST;
     }
 
-    public  void setTheLocation(String ST)
+    public  void setLatitude(String ST)
     {
-        TheLocation = ST;
+        Latitude = ST;
+    }
+
+    public  void setLongitude(String ST)
+    {
+        Longitude = ST;
     }
 
 
