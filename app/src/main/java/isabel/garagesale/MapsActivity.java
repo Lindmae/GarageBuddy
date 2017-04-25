@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.util.ArraySet;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +23,12 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.location.LocationManager.GPS_PROVIDER;
 
@@ -31,6 +37,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private GoogleMap mMap = null;
     private  int LOCATION_PERMISSION_CODE = 6;
+    private ArrayList<SellData> sellTracker;
+    private ArrayList<Marker> markTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +49,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        sellTracker = null;
+        markTracker = null;
         if(weHaveFineLocationPermission())
         {
             Toast.makeText(MapsActivity.this, "We Have Fine Location Permission",Toast.LENGTH_LONG).show();
@@ -131,13 +141,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         startActivityForResult(intent,1);
 
+
+
+        //clearAllMarkers();
+        //addMarkers();
+
     }
 
     private void goToListActivity() {
 
         Intent intent = new Intent(this, listView.class);
 
-        startActivityForResult(intent,1);
+        startActivityForResult(intent,2);
 
     }
 
@@ -161,6 +176,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 String[] DataToPassBack = data.getStringArrayExtra("keyName");
             }
         }
+        if (requestCode == 2) {
+            if (resultCode == RESULT_OK) {
+
+                // info from search
+                String[] DataToPassBack = data.getStringArrayExtra("keyName");
+            }
+        }
     }
 
     @Override
@@ -168,6 +190,34 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
         enableMapSettings();
         centerToMyLocation();
+        //addMarkers();
+        //hello
+    }
+
+    private void addMarkers()
+    {
+        for(SellData s : sellTracker)
+        {
+            String p = s.getTheLocation();
+            String[] tokens = p.split(",");
+            double lat = Double.parseDouble(tokens[0]);
+            double longi = Double.parseDouble(tokens[1]);
+            LatLng place = new LatLng(lat,longi);
+
+            markTracker.add( mMap.addMarker(new MarkerOptions().position(place).title("GB")) );
+            int index = markTracker.size();
+            markTracker.get(index).showInfoWindow();
+
+        }
+    }
+
+    private void clearAllMarkers()
+    {
+        for(Marker m : markTracker)
+        {
+            m.remove();
+            m = null;
+        }
     }
 
     private void enableMapSettings()
@@ -179,6 +229,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             if(mMap != null)
             {
                 mMap.setMyLocationEnabled(true);
+
                 //UiSettings mMapSettings = mMap.getUiSettings();
                 //mMapSettings.setCompassEnabled(true);
                 //mMapSettings.setMyLocationButtonEnabled(true);
