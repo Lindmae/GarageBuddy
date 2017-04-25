@@ -82,10 +82,17 @@ public class StartDateSelector extends AppCompatActivity {
         sellData.setStartDay(year+"/"+month+"/"+day);
 
 
-        Intent intent = new Intent(this, EndDateSelector.class);
+        //Intent intent = new Intent(this, EndDateSelector.class);
+//
+//        intent.putExtra("globalData4",sellData);
+//        startActivityForResult(intent,5);
+//        setResult(RESULT_OK, intent);
+//        finish();
 
-        intent.putExtra("globalData4",sellData);
-        startActivityForResult(intent,5);
+        Intent intent = new Intent(this, Categories.class);
+
+        intent.putExtra("globalData5",sellData);
+        startActivityForResult(intent,6);
         setResult(RESULT_OK, intent);
         finish();
 

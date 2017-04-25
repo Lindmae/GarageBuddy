@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
-            android:text="What day will your garage sale begin?"
+            android:text="What day will your garage sale be on?"
             app:layout_constraintBottom_toTopOf="@+id/datePicker"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -34,10 +34,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:calendarViewShown="false"
-            android:datePickerMode="spinner"
+            android:endYear="2017"
+            android:headerBackground="#fed766"
+            app:layout_constraintBottom_toTopOf="@+id/button5"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/button5"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <Button
