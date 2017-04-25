@@ -36,7 +36,9 @@ public class StartTimeSelector extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
                 if(checkValid() == true)
+
                     goToSecondActivity();
                 else {
                     Snackbar mySnackbar = Snackbar.make(findViewById(R.id.myCoordinatorLayout), message, Snackbar.LENGTH_SHORT);
@@ -50,17 +52,21 @@ public class StartTimeSelector extends AppCompatActivity {
     }
 
     private boolean checkValid(){
+
         Date dt = new Date();
         int currentHour = dt.getHours();
         int currentMinute = dt.getMinutes();
 
         //wrong hours
         if (timePicker.getCurrentHour() < currentHour) {
+
             message = "Invalid hour!";
             return false;
         }
         //current hour but minutes are wrong
+
         if ((timePicker.getCurrentMinute() < currentMinute) && (timePicker.getCurrentHour() == currentHour)){
+
             message = "Invalid minute!";
             return false;
         }

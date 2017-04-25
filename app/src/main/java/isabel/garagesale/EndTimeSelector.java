@@ -27,6 +27,7 @@ public class EndTimeSelector extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
                 if(checkValid() == true)
                     goToSecondActivity();
                 else {
@@ -41,6 +42,7 @@ public class EndTimeSelector extends AppCompatActivity {
     }
 
     private boolean checkValid(){
+
         Date dt = new Date();
         int currentHour = dt.getHours();
         int currentMinute = dt.getMinutes();
@@ -56,12 +58,16 @@ public class EndTimeSelector extends AppCompatActivity {
         //String time = sellData.getStartTime();
 
         //wrong hours
+
         if (timePicker.getCurrentHour() < currentHour) {
+
             message = "Invalid hour!";
             return false;
         }
         //current hour but minutes are wrong
+
         if ((timePicker.getCurrentMinute() < currentMinute + 5) && (timePicker.getCurrentHour() == currentHour)){
+
             message = "Invalid minute!";
             return false;
         }

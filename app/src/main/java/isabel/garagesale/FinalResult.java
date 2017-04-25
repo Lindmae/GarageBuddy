@@ -17,6 +17,7 @@ public class FinalResult extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_result);
+
         Button button = (Button) findViewById(R.id.button7);
         button.setOnClickListener(new FinalResult.MyClass() {
 
@@ -41,7 +42,7 @@ public class FinalResult extends AppCompatActivity {
         params.setParams(sellData.getStartTime());
         params.setParams(sellData.getEndTime());
         params.setParams(sellData.getStartDay());
-        params.setParams(sellData.getEndDay());
+
         BackgroundTask backgroundTask = new BackgroundTask(this);
         backgroundTask.execute(params);
 
