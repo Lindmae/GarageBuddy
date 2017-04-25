@@ -21,6 +21,7 @@ public class StartDateSelector extends AppCompatActivity {
     String day;
     String month;
     String year;
+    CharSequence message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +38,9 @@ public class StartDateSelector extends AppCompatActivity {
                 if(checkValid() == true)
                     goToSecondActivity();
                 else {
-                    CharSequence message = "Invalid date!";
                     Snackbar mySnackbar = Snackbar.make(findViewById(R.id.myCoordinatorLayout), message, Snackbar.LENGTH_SHORT);
                     mySnackbar.show();
-                    //Snackbar mySnackbar = Snackbar.make(R.layout.activity_start_date_selector, "Invalid date!", Snackbar.LENGTH_SHORT);
+
                 }
 
             }
@@ -54,12 +54,20 @@ public class StartDateSelector extends AppCompatActivity {
         int currentMonth = dt.getMonth();
         int currentYear = dt.getYear();
 
-        if (datePicker.getDayOfMonth() < currentDay)
+        if (datePicker.getMonth() < currentMonth) {
+            message = "Invalid month!";
             return false;
-        if ((datePicker.getMonth() + 1) < currentMonth)
+        }
+
+        if (datePicker.getDayOfMonth() < currentDay) {
+            message = "Invalid day!";
             return false;
-        if (datePicker.getYear() < currentYear)
+        }
+
+        if (datePicker.getYear() < currentYear) {
+            message = "Invalid year!";
             return false;
+        }
 
         return true;
     }

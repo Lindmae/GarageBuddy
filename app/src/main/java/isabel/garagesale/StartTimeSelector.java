@@ -3,6 +3,7 @@ package isabel.garagesale;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class StartTimeSelector extends AppCompatActivity {
     String hour;
     String minute;
     TimePicker timePicker;
+    CharSequence message;
 
 
     @Override
@@ -34,11 +36,34 @@ public class StartTimeSelector extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                goToSecondActivity();
+                if(checkValid() == true)
+                    goToSecondActivity();
+                else {
+                    Snackbar mySnackbar = Snackbar.make(findViewById(R.id.myCoordinatorLayout), message, Snackbar.LENGTH_SHORT);
+                    mySnackbar.show();
+
+                }
 
             }
 
         });
+    }
+
+    private boolean checkValid(){
+        Date dt = new Date();
+        int currentHour = dt.getHours();
+        int currentMinute = dt.getMinutes();
+
+        if (timePicker.getHour() < currentHour) {
+            message = "Invalid hour!";
+            return false;
+        }
+        if (timePicker.getMinute() < (currentMinute + 5)) {
+            message = "Invalid minute!";
+            return false;
+        }
+
+        return true;
     }
 
     private void goToSecondActivity() {
