@@ -98,6 +98,7 @@ public class FinalResult extends AppCompatActivity {
         params.setParams(sellData.getStartTime());
         params.setParams(sellData.getEndTime());
         params.setParams(sellData.getStartDay());
+        params.setParams(sellData.getDescription());
 
         BackgroundTask backgroundTask = new BackgroundTask(this);
         backgroundTask.execute(params);
