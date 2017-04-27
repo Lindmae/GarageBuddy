@@ -43,30 +43,28 @@ public class EndTimeSelector extends AppCompatActivity {
 
     private boolean checkValid(){
 
-        Date dt = new Date();
-        int currentHour = dt.getHours();
-        int currentMinute = dt.getMinutes();
-
         Intent prevIntent = getIntent();
-        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData1");
-        //code to modify the SellData goes here
+        SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData2");
+        String p = sellData.getStartTime();
+        String[] tokens = p.split(":");
+        int startHour = Integer.parseInt(tokens[0]);
+        int startMinute = Integer.parseInt(tokens[1]);
 
 
-        hour = String.valueOf(timePicker.getHour());
-        minute = String.valueOf(timePicker.getMinute());
+
 
         //String time = sellData.getStartTime();
 
         //wrong hours
 
-        if (timePicker.getCurrentHour() < currentHour) {
+        if (timePicker.getHour() - startHour < 0) {
 
             message = "Invalid hour!";
             return false;
         }
         //current hour but minutes are wrong
 
-        if ((timePicker.getCurrentMinute() < currentMinute + 5) && (timePicker.getCurrentHour() == currentHour)){
+        if ((timePicker.getMinute() < startMinute + 30 ) && (timePicker.getHour() == startHour)  ){
 
             message = "Invalid minute!";
             return false;

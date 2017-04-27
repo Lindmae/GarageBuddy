@@ -33,7 +33,9 @@ public class Description extends AppCompatActivity {
         Intent prevIntent = getIntent();
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData6");
         //code to modify the SellData goes here
-        sellData.setDescription(descBox.getText().toString());
+
+        EditText ourText = (EditText)findViewById(R.id.editText2);
+        sellData.setDescription(ourText.getText().toString());
 
         Intent intent = new Intent(this, GaraageSaleLocationSelector.class);
 

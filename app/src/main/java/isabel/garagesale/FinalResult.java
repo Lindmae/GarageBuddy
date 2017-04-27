@@ -53,7 +53,7 @@ public class FinalResult extends AppCompatActivity {
             ArrayList<String> t = sellData.getCategories();
             for(String s : t)
             {
-                textbox.append("       " + t + "\n");
+                textbox.append("       " + s + "\n");
             }
 
             textbox.append("Description:\n");
