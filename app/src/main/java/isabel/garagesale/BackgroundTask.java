@@ -1,6 +1,9 @@
 package isabel.garagesale;
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.content.Context;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.net.HttpURLConnection;
@@ -18,14 +21,15 @@ public class BackgroundTask extends AsyncTask<myTaskParams,Void,String> {
 
     Context ctx;
 
-    BackgroundTask(Context ctx){
+    BackgroundTask(Context ctx) {
         this.ctx = ctx;
-
     }
+
 
     @Override
     protected String doInBackground(myTaskParams... params) {
-        String reg_url = "http://chriscal.x10host.com/register.php";
+        String reg_url = "http://chriscal.x10.mx/register.php";
+        String json_url = "http://chriscal.x10.mx/getsales.php";
         String method = params[0].getMethod();
         if(method.equals("TestHTTP")){
             String startTime = params[0].Params.get(0);
@@ -81,11 +85,55 @@ public class BackgroundTask extends AsyncTask<myTaskParams,Void,String> {
 
         }
 
+        else if(method.equals("getsales")){
+            try{
+                URL url = new URL(json_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                String error;
+                if(httpURLConnection !=null){
+                    error = "connection successful";
+                    Log.d("error",error);
+                }
+                else{
+                    error = "connection unsuccessful";
+                    Log.d("error",error);
+                }
+
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                StringBuilder stringBuilder = new StringBuilder();
+                String JSON_STRING;
+                while((JSON_STRING = bufferedReader.readLine())!=null){
+                    stringBuilder.append(JSON_STRING+"\n");
+
+                }
+
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return stringBuilder.toString().trim();
+
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
         return null;
     }
 
     @Override
     protected void onPostExecute(String result){
-        Toast.makeText(ctx,result, Toast.LENGTH_LONG).show();
+        if(result.equals("Garage Sale Added!")) {
+            Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
+        }
+        else{
+            TextView textView = (TextView) ((Activity) ctx).findViewById(R.id.textView12);
+            textView.setText(result);
+
+        }
     }
 }

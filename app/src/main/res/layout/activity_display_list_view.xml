@@ -4,18 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="isabel.garagesale.listView">
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="80dp" />
+    tools:context="isabel.garagesale.displayListView">
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:id="@+id/listview">
+    </ListView>
 
 </RelativeLayout>

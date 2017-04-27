@@ -65,7 +65,8 @@
             android:name=".ViewCurrentLocation"
             android:label="@string/title_activity_view_current_location" />
         <activity android:name=".UnderConstruction" />
-        <activity android:name=".listView"></activity>
+        <activity android:name=".listView" />
+        <activity android:name=".displayListView"></activity>
     </application>
 
 </manifest>

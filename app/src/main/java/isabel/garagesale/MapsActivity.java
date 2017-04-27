@@ -154,6 +154,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         startActivityForResult(intent,2);
 
+
     }
 
     private class MyClass implements View.OnClickListener {
