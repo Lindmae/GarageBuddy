@@ -29,10 +29,10 @@ public class FinalResult extends AppCompatActivity {
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData8");
         TextView textbox = (TextView) findViewById(R.id.textView9);
 
-        //String p = sellData.getTheLocation();
-        //String[] tokens = p.split(",");
-        double lat = Double.parseDouble(sellData.getLatitude());
-        double longi = Double.parseDouble(sellData.getLongitude());
+        String p = sellData.getTheLocation();
+        String[] tokens = p.split(",");
+        double lat = Double.parseDouble(tokens[0]);
+        double longi = Double.parseDouble(tokens[1]);
         Geocoder geo = new Geocoder(this, Locale.getDefault());
         try
         {
@@ -53,7 +53,7 @@ public class FinalResult extends AppCompatActivity {
             ArrayList<String> t = sellData.getCategories();
             for(String s : t)
             {
-                textbox.append("       " + t + "\n");
+                textbox.append("       " + s + "\n");
             }
 
             textbox.append("Description:\n");

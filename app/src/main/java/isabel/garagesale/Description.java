@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class Description extends AppCompatActivity {
 
@@ -28,7 +29,8 @@ public class Description extends AppCompatActivity {
         Intent prevIntent = getIntent();
         SellData sellData = (SellData)prevIntent.getSerializableExtra("globalData6");
         //code to modify the SellData goes here
-
+        EditText ourText = (EditText)findViewById(R.id.editText2);
+        sellData.setDescription(ourText.getText().toString());
         Intent intent = new Intent(this, GaraageSaleLocationSelector.class);
 
         intent.putExtra("globalData7",sellData);
