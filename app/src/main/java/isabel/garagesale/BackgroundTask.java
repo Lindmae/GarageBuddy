@@ -25,7 +25,7 @@ public class BackgroundTask extends AsyncTask<myTaskParams,Void,String> {
 
     @Override
     protected String doInBackground(myTaskParams... params) {
-        String reg_url = "http://chriscal.x10host.com/register.php";
+        String reg_url = "http://chriscal.x10.mx/register.php";
         String method = params[0].getMethod();
         if(method.equals("TestHTTP")){
             String startTime = params[0].Params.get(0);
