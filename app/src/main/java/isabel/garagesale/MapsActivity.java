@@ -37,8 +37,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private GoogleMap mMap = null;
     private  int LOCATION_PERMISSION_CODE = 6;
-    private ArrayList<SellData> sellTracker;
-    private ArrayList<Marker> markTracker;
+    //private ArrayList<SellData> sellTracker;
+    //private ArrayList<Marker> markTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +49,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        sellTracker = null;
-        markTracker = null;
+        //sellTracker = null;
+        //markTracker = null;
         if(weHaveFineLocationPermission())
         {
             Toast.makeText(MapsActivity.this, "We Have Fine Location Permission",Toast.LENGTH_LONG).show();
@@ -194,14 +194,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         //hello
     }
 
-    private void addMarkers()
+    /*private void addMarkers()
     {
         for(SellData s : sellTracker)
         {
-            String p = s.getTheLocation();
-            String[] tokens = p.split(",");
-            double lat = Double.parseDouble(tokens[0]);
-            double longi = Double.parseDouble(tokens[1]);
+            //String p = s.getTheLocation();
+            //String[] tokens = p.split(",");
+            double lat = Double.parseDouble(s.getLatitude());
+            double longi = Double.parseDouble(s.getLongitude());
             LatLng place = new LatLng(lat,longi);
 
             markTracker.add( mMap.addMarker(new MarkerOptions().position(place).title("GB")) );
@@ -218,7 +218,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             m.remove();
             m = null;
         }
-    }
+    }*/
 
     private void enableMapSettings()
     {
@@ -251,6 +251,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 double lat = myLocation.getLatitude();
                 double longi = myLocation.getLongitude();
                 LatLng current = new LatLng(lat, longi);
+                //LatLng current = new LatLng(41.871859, -87.649191);
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current,16));
             }
         }

@@ -19,6 +19,8 @@ public class SellData implements Serializable
     private ArrayList<String> Categories;
     private String Description;
     private  String TheLocation;
+    //private String Latitude;
+    //private  String Longitude;
 
     public SellData()
     {
@@ -29,6 +31,8 @@ public class SellData implements Serializable
 
         Categories = new ArrayList<String>();
         Description = null;
+        //Latitude = null;
+        //Longitude = null;
         TheLocation = null;
 
 
@@ -64,6 +68,11 @@ public class SellData implements Serializable
         return Description;
     }
 
+    /*public String getLongitude()
+    {
+        return Longitude;
+    }*/
+
     public String getTheLocation()
     {
         return TheLocation;
@@ -72,6 +81,24 @@ public class SellData implements Serializable
 
     public void setStartTime(String ST )
     {
+        String[] tokens = ST.split(":");
+
+        if(Integer.parseInt(tokens[0]) <= 9)
+        {
+            StringBuilder s = new StringBuilder("0");
+            s.append(tokens[0]);
+            tokens[0] = s.toString();
+        }
+
+        if(Integer.parseInt(tokens[1]) <= 9)
+        {
+            StringBuilder s = new StringBuilder(tokens[0]);
+            s.append(":");
+            s.append("0");
+            s.append(tokens[1]);
+            StartTime = s.toString();
+            return;
+        }
         StartTime = ST;
     }
 
@@ -96,6 +123,11 @@ public class SellData implements Serializable
     {
         Description = ST;
     }
+
+    /*public  void setLatitude(String ST)
+    {
+        Latitude = ST;
+    }*/
 
     public  void setTheLocation(String ST)
     {
